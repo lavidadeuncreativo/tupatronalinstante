@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Badge } from "@/components/ui/badge"; // Need to install badge? No, I didn't install it. I'll use a span or install it.
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"; // Need to install?
+
 
 // I'll stick to components I installed: card, tabs, scroll-area, separator
 import { Separator } from "@/components/ui/separator";
