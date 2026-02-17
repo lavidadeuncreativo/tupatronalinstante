@@ -1,0 +1,31 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  patterns  Pattern[]
+}
+
+model Pattern {
+  id          String   @id @default(cuid())
+  userId      String?
+  title       String
+  category    String   // amigurumi, bag, motif, etc.
+  mode        String   // instant, exact
+  content     String   // JSON string of the pattern
+  imageUrl    String?
+  originalUrl String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  user        User?    @relation(fields: [userId], references: [id])
+}
